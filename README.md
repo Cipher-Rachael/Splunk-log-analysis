@@ -89,7 +89,8 @@ Failed login attempts:
 
 System startup and shutdown
 
-![image](https://github.com/Cipher-Rachael/Splunk-log-analysis/assets/101173177/f1f415f5-800a-4cac-8017-42206c7a9f53)
+![image](https://github.com/Cipher-Rachael/Splunk-log-analysis/assets/101173177/3c8f4fba-e3e3-41b4-9e30-172df3103cbb)
 
 
-In conclusion, this repository serves as a valuable resource for individuals and organizations seeking to enhance their log analysis capabilities in Splunk. By providing a curated collection of search queries for system and security event logs, users can streamline their monitoring processes, detect anomalies, and mitigate security risks effectively. By leveraging these tools and skills, users can maintain the integrity, security, and performance of their systems while gaining actionable insights from their log data.
+
+In conclusion, this repository serves as a valuable resource for individuals and organizations seeking to enhance their log analysis capabilities in Splunk. By providing a curated collection of search queries for system and security event logs, users can streamline their monitoring processes, detect anomalies, and mitigate security risks effectively. By leveraging these tools and skills, users can maintain the integrity, security, and performance of their systems while gaining actionable insights from their log data. The data can however be filtered for accuracy and desired outcome.
