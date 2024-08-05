@@ -1,96 +1,55 @@
 # Splunk-log-analysis
-Comprehensive Search Queries for System and Security Event Logs
 
-Objective:
-The objective of this repository is to provide users with a comprehensive collection of search queries for analyzing system and security event logs in Splunk. By leveraging these queries, users can effectively monitor and extract valuable insights from their log data, enabling them to identify potential security threats, track system performance, and troubleshoot issues efficiently.
+## Splunk-log-analysis: Comprehensive Search Queries
 
-Skills Learned:
-- Splunk log analysis and monitoring.
-- Understanding of event log data structure and interpretation.
-- Familiarity with event log monitoring best practices and security protocols.
+This repository provides a collection of search queries for analyzing system and security event logs in Splunk. By leveraging these queries, you can effectively gain valuable insights from your log data and identify potential security threats, track system performance, and troubleshoot issues efficiently.
 
-Searches to include:
+### Objective
 
-1. Search for Specific Event IDs:
-This search retrieves all security events with Event IDs 4624 (successful logins) and 4625 (failed logins).
-   
-   index=main sourcetype="WinEventLog:Security" EventCode=4624 OR EventCode=4625
-   
+* Equip users with essential Splunk search queries to analyze system and security event logs.
+* Enable users to monitor system health, identify security risks, and troubleshoot problems quickly.
 
-2. Search for Logins by a Specific User:
-Replace "username" with the username you want to search for. This search retrieves successful login events for the specified user.
-   
-   index=main sourcetype="WinEventLog:Security" EventCode=4624 Account_Name="username"
-   
+### Skills Learned
 
-3. Search for Failed Logins:
-This search retrieves all security events indicating failed login attempts.
-   
-   index=main sourcetype="WinEventLog:Security" EventCode=4625
-   
+* **Splunk Log Analysis:** Gain practical experience with Splunk search syntax and commands.
+* **Event Log Interpretation:** Understand the structure and meaning of different event log types.
+* **Security Monitoring Best Practices:** Learn best practices for monitoring security events in Splunk.
 
-4. Search for Logins from Specific IP Addresses:
-Replace "192.168.1.15" with the IP address you want to search for. This search retrieves successful login events from the specified IP address.
-   
-   index=main sourcetype="WinEventLog:Security" EventCode=4624 Source_Network_Address="192.168.1.15"
-  
+### Provided Searches
 
-5. Search for Account Lockouts:
-This search retrieves security events indicating account lockouts.
+This repository offers a variety of pre-built search queries to target different system and security events. Each search includes a description and explanation:
 
-   index=main sourcetype="WinEventLog:Security" EventCode=4740
+1. **Search for Specific Event IDs:** Retrieve events based on specific event codes (e.g., successful and failed login attempts).
+2. **Search for Logins by User:** Identify login activity for a particular user.
+3. **Search for Failed Logins:** Focus on failed login attempts for potential security concerns.
+4. **Search for Logins by IP Address:** Track login activity originating from specific IP addresses.
+5. **Search for Account Lockouts:** Identify instances where user accounts have been locked.
+6. **Search for System Startup/Shutdown Events:** Monitor system boot and shutdown activities.
+7. **Search for Specific Error Codes:** Investigate events based on predefined error codes.
 
-6. Search for System Startup and Shutdown Events:
-This search retrieves events indicating system startup (EventCode=6005) and shutdown (EventCode=6006).
-   index=main sourcetype="WinEventLog:System" EventCode=6005 OR EventCode=6006
+### Using the Provided Searches
 
-7. Search for Specific Error Codes:
-This search retrieves events with the specified Event Code from the system event logs.
-  
-   index=main sourcetype="WinEventLog:System" EventCode=100
+These pre-built searches can be used as a starting point for your Splunk investigations. You can easily modify and combine them to create more specific searches tailored to your needs.
+
+**Note:** While Splunk Enterprise was used for this exercise, these core search principles can be applied to various Splunk versions.
+
+### Instructions for Setting Up Splunk Data Source 
+
+**This section is included for reference**
+
+This section provides a basic guide to adding data sources in Splunk Enterprise (http://127.0.0.1:8000).
+
+1. Navigate to the **Settings** tab and click **"Add Data."**
+2. Select the **"monitor"** icon.
+3. Choose to monitor **"local events logs"** and select the desired logs (e.g., security, system).
+4. Review settings and click **"Submit."**
+5. Click **"Start searching your data"** to begin analyzing collected logs.
 
 
-Instructions:
-Splunk enterprise was used to complete this exercise. Login to your Splunk web interface (http://127.0.0.1:8000).
+### Additional Notes
 
-1. Go to the Settings tab and click "Add Data."
-
-![image](https://github.com/Cipher-Rachael/Splunk-log-analysis/assets/101173177/3fa85fb1-33fb-4730-b308-286b5963fa2a)
-
-2. Select the monitor icon.
-
-![image](https://github.com/Cipher-Rachael/Splunk-log-analysis/assets/101173177/60a1ef4a-1b1e-4dbd-8743-890845f9a039)
-
-3. Choose to monitor local events logs and add security and system logs, then click "Next."
-
-![image](https://github.com/Cipher-Rachael/Splunk-log-analysis/assets/101173177/d41c566e-9773-45e5-8f69-132480baa523)
-
-4. Review the settings and click "Submit."
-   
-![image](https://github.com/Cipher-Rachael/Splunk-log-analysis/assets/101173177/1e694d6a-0567-48f7-b3a7-8c853637c640)
-
-5. Click on "Start searching your data" to begin analyzing the collected logs.
-
-![image](https://github.com/Cipher-Rachael/Splunk-log-analysis/assets/101173177/34f7a407-2108-4b05-8cd3-ae94a5997591)
-
-6. The results will be generated as per below. On the search bar you can generate more searches like the ones mentioned and more.
-
-![image](https://github.com/Cipher-Rachael/Splunk-log-analysis/assets/101173177/b8797c89-bbb4-4963-8013-ff17dbd03ba3)
-
-These are some of the search results:
-
-Specific Id's:
-
-![image](https://github.com/Cipher-Rachael/Splunk-log-analysis/assets/101173177/b1e5c152-4721-4c27-a1d1-555d7f8a486c)
-
-Failed login attempts:
-
-![image](https://github.com/Cipher-Rachael/Splunk-log-analysis/assets/101173177/2cbfa8ad-2156-4b6e-aa9b-aaf5c5cd3044)
-
-System startup and shutdown
-
-![image](https://github.com/Cipher-Rachael/Splunk-log-analysis/assets/101173177/3c8f4fba-e3e3-41b4-9e30-172df3103cbb)
+* Feel free to contribute additional search queries to this repository.
+* Explore more advanced Splunk features for further log analysis capabilities.
+* Always refer to Splunk documentation for detailed information on search syntax and functionalities.
 
 
-
-This repository serves as a valuable resource for individuals and organizations seeking to enhance their log analysis capabilities in Splunk. By providing a curated collection of search queries for system and security event logs, users can streamline their monitoring processes, detect anomalies, and mitigate security risks effectively. By leveraging these tools and skills, users can maintain the integrity, security, and performance of their systems while gaining actionable insights from their log data. The data can however be filtered for accuracy and desired outcome.
